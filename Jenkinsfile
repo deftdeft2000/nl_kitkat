@@ -1,7 +1,10 @@
 pipeline {
     agent any
-    stages{
-        stage('Test') {
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
                 step([$class: 'CxScanBuilder', comment: '', configAsCode: true, credentialsId: '', customFields: '', excludeFolders: '', exclusionsSetting: 'global', failBuildOnNewResults: false, failBuildOnNewSeverity: 'HIGH', filterPattern: '''!**/_cvs/**/*, !**/.svn/**/*, !**/.hg/**/*, !**/.git/**/*, !**/.bzr/**/*,
         !**/.gitgnore/**/*, !**/.gradle/**/*, !**/.checkstyle/**/*, !**/.classpath/**/*, !**/bin/**/*,
         !**/obj/**/*, !**/backup/**/*, !**/.idea/**/*, !**/*.DS_Store, !**/*.ipr, !**/*.iws,
@@ -15,7 +18,8 @@ pipeline {
         !**/*.htmls, !**/*.ihtml, !**/*.mht, !**/*.mhtm, !**/*.mhtml, !**/*.ssi, !**/*.stm,
         !**/*.bin,!**/*.lock,!**/*.svg,!**/*.obj,
         !**/*.stml, !**/*.ttml, !**/*.txn, !**/*.xhtm, !**/*.xhtml, !**/*.class, !**/*.iml, !Checkmarx/Reports/*.*,
-        !OSADependencies.json, !**/node_modules/**/*, !**/.cxsca-results.json, !**/.cxsca-sast-results.json, !.checkmarx/cx.config''', fullScanCycle: 10, groupId: '1', password: '{AQAAABAAAAAQTX68hebwIG2a4shPCihBZlfyXruyIg9voqvoxGMwFZE=}', preset: '0', projectName: 'pipe2', sastEnabled: true, scaReportFormat: 'PDF', serverUrl: 'https://cxsast.vncs.local', sourceEncoding: '1', username: '', vulnerabilityThresholdResult: 'FAILURE', waitForResultsEnabled: true])
+        !OSADependencies.json, !**/node_modules/**/*, !**/.cxsca-results.json, !**/.cxsca-sast-results.json, !.checkmarx/cx.config''', fullScanCycle: 10, groupId: '1', password: '{AQAAABAAAAAQwr/cWFmHfZTQE0U1Xp7l9sIbtVsR0fZi8pq+BijJVXU=}', preset: '0', projectName: 'pipe2', sastEnabled: true, scaReportFormat: 'PDF', serverUrl: 'https://cxsast.vncs.local', sourceEncoding: '1', username: '', vulnerabilityThresholdResult: 'FAILURE', waitForResultsEnabled: true])
+            }
         }
     }
 }
